@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Konfigurasi sensitif ###
+src/main/resources/application.properties
