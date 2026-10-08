@@ -2,8 +2,23 @@ spring.application.name=penta
 
 spring.datasource.url=jdbc:mysql://localhost:3306/db_penta_disnaker?useSSL=false&serverTimezone=Asia/Jakarta
 spring.datasource.username=root
-spring.datasource.password=
+spring.datasource.password=yourpassword
 
 spring.jpa.hibernate.ddl-auto=validate
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
+
+file.upload-dir=uploads
+spring.servlet.multipart.max-file-size=10MB
+spring.servlet.multipart.max-request-size=20MB
+
+# --- Keamanan (JWT) ---
+# Buat secret dengan: openssl rand -base64 48
+app.jwt.secret=
+app.jwt.expiration-hours=8
+
+# --- Akun admin pertama (hanya dipakai saat tabel users masih kosong) ---
+app.admin.password=
+
+# --- CORS: alamat frontend yang boleh memanggil API, pisahkan dengan koma ---
+app.cors.allowed-origins=http://localhost:3000

@@ -87,6 +87,9 @@ public class Cpmi {
     @Column(name = "kualifikasi_kompetensi", length = 150)
     private String kualifikasiKompetensi;
 
+    @Column(name = "keterangan", length = 255)
+    private String keterangan;
+
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;

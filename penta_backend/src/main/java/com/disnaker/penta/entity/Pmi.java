@@ -1,6 +1,7 @@
 package com.disnaker.penta.entity;
 
 import com.disnaker.penta.entity.enums.JenisKelamin;
+import com.disnaker.penta.entity.enums.StatusPmi;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,6 +33,13 @@ public class Pmi {
     @Column(name = "nik", length = 16)
     private String nik;
 
+    @Column(name = "no_paspor", length = 20)
+    private String noPaspor;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status_pmi")
+    private StatusPmi statusPmi;
+
     @Column(name = "tempat_lahir", length = 100)
     private String tempatLahir;
 
@@ -57,6 +65,10 @@ public class Pmi {
 
     @Column(name = "keterangan", length = 255)
     private String keterangan;
+
+    /** Path/nama file foto tersimpan di server - diisi manual dulu, nanti lewat fitur upload */
+    @Column(name = "foto", length = 255)
+    private String foto;
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)

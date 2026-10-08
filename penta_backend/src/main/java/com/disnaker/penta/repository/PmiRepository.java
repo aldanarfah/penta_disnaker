@@ -12,4 +12,6 @@ public interface PmiRepository extends JpaRepository<Pmi, Long> {
     List<Pmi> findByNikContaining(String nik);
 
     List<Pmi> findByNamaContainingIgnoreCase(String nama);
+
+    List<Pmi> findByNoPasporContaining(String noPaspor);
 }

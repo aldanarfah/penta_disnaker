@@ -35,10 +35,14 @@ public class User {
     @Column(name = "nama_lengkap", length = 150, nullable = false)
     private String namaLengkap;
 
+    /** NIP pegawai atau ID bebas (contoh: ADMIN-001). Wajib dan unik. */
+    @Column(name = "nip", length = 50, nullable = false, unique = true)
+    private String nip;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "role", nullable = false)
     @Builder.Default
-    private UserRole role = UserRole.ADMIN;
+    private UserRole role = UserRole.PEGAWAI;
 
     @Column(name = "is_active")
     @Builder.Default
